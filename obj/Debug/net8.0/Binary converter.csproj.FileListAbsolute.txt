@@ -1,0 +1,14 @@
+C:\Users\Mathe_ss6lb0m\source\repos\Binary converter\bin\Debug\net8.0\Binary converter.exe
+C:\Users\Mathe_ss6lb0m\source\repos\Binary converter\bin\Debug\net8.0\Binary converter.deps.json
+C:\Users\Mathe_ss6lb0m\source\repos\Binary converter\bin\Debug\net8.0\Binary converter.runtimeconfig.json
+C:\Users\Mathe_ss6lb0m\source\repos\Binary converter\bin\Debug\net8.0\Binary converter.dll
+C:\Users\Mathe_ss6lb0m\source\repos\Binary converter\bin\Debug\net8.0\Binary converter.pdb
+C:\Users\Mathe_ss6lb0m\source\repos\Binary converter\obj\Debug\net8.0\Binary converter.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mathe_ss6lb0m\source\repos\Binary converter\obj\Debug\net8.0\Binary converter.AssemblyInfoInputs.cache
+C:\Users\Mathe_ss6lb0m\source\repos\Binary converter\obj\Debug\net8.0\Binary converter.AssemblyInfo.cs
+C:\Users\Mathe_ss6lb0m\source\repos\Binary converter\obj\Debug\net8.0\Binary converter.csproj.CoreCompileInputs.cache
+C:\Users\Mathe_ss6lb0m\source\repos\Binary converter\obj\Debug\net8.0\Binary converter.dll
+C:\Users\Mathe_ss6lb0m\source\repos\Binary converter\obj\Debug\net8.0\refint\Binary converter.dll
+C:\Users\Mathe_ss6lb0m\source\repos\Binary converter\obj\Debug\net8.0\Binary converter.pdb
+C:\Users\Mathe_ss6lb0m\source\repos\Binary converter\obj\Debug\net8.0\Binary converter.genruntimeconfig.cache
+C:\Users\Mathe_ss6lb0m\source\repos\Binary converter\obj\Debug\net8.0\ref\Binary converter.dll

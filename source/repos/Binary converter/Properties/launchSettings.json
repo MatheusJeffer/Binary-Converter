@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "Perfil 1": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Users\\Mathe_ss6lb0m\\source\\repos\\Binary converter\\bin\\Debug\\net8.0\\Binary converter.exe",
+      "remoteDebugEnabled": true
+    }
+  }
+}

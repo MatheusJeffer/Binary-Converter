@@ -16,7 +16,7 @@ namespace Binary_converter.Binary_desconverter
             string text = "";
             int index = 0;
             List<string> binaryList = new List<string> { };
-            int multiIndex = 7;
+            int multiIndex = 8;
 
             while (true)
             {
@@ -28,8 +28,8 @@ namespace Binary_converter.Binary_desconverter
                 binaryList.Add(finalBin);
                  finalBin = "";
 
-                index += 7;
-                multiIndex += 7;
+                index += 8;
+                multiIndex += 8;
 
                 if (index >= binary.Length)
                 {

@@ -12,3 +12,4 @@ C:\Users\Mathe_ss6lb0m\source\repos\Binary converter\obj\Debug\net8.0\refint\Bin
 C:\Users\Mathe_ss6lb0m\source\repos\Binary converter\obj\Debug\net8.0\Binary converter.pdb
 C:\Users\Mathe_ss6lb0m\source\repos\Binary converter\obj\Debug\net8.0\Binary converter.genruntimeconfig.cache
 C:\Users\Mathe_ss6lb0m\source\repos\Binary converter\obj\Debug\net8.0\ref\Binary converter.dll
+C:\Users\Mathe_ss6lb0m\source\repos\Binary converter\obj\Debug\net8.0\Binary converter.sourcelink.json

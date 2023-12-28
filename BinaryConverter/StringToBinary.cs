@@ -11,19 +11,41 @@ namespace Binary_converter.BinaryConverter
     {
         public static string Input(string text)
         {
-            string Binary = "";
+            string binary = "";
+            string finalBinary = "";
+            List<string> allBinary = new List<string> { };
             int asciiChar;
             
             foreach(char charactere in text)
             {
                 asciiChar = (int)charactere;
 
-                Binary += $"{IntBinaryConverter.IntBinary(asciiChar)} ";
+                binary = $"{IntBinaryConverter.IntBinary(asciiChar)}";
+
+                if(binary.Length < 8)
+                {
+                    for(int _ = binary.Length; _ < 8; _++)
+                    {
+                        finalBinary += "0";
+                    }
+                    finalBinary += binary;
+                    allBinary.Add(finalBinary);
+                    finalBinary = "";
+                }
+                else
+                {
+                    finalBinary = binary;
+                    allBinary.Add(finalBinary);
+                    finalBinary = "";
+                }
             }
 
+            for (int index = 0; index < allBinary.Count; index++)
+            {
+                finalBinary += $"{allBinary[index]} ";
+            }
 
-
-            return Binary;
+            return finalBinary;
 
 
 

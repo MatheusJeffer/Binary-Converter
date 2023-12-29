@@ -43,13 +43,10 @@ namespace Binary_converter.BinaryConverter
             for (int index = 0; index < allBinary.Count; index++)
             {
                 finalBinary += $"{allBinary[index]} ";
+
             }
 
             return finalBinary;
-
-
-
-
         }
 
 

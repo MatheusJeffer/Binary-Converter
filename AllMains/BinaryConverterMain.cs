@@ -4,15 +4,16 @@ using BinaryConverter.BinaryConverter;
 using BinaryConverter.BinaryDesconverter;
 using Binary_converter.BinaryConverter;
 using Binary_converter.Binary_desconverter;
-namespace BinaryConverter
+using System.Diagnostics;
+namespace BinaryConverter.AllMains
 {
-    public static class ProgramMain
+    public static class BinaryMain
     {
-        public static void Main()
+        public static void BinaryConveterMain()
         {
             bool loopBreaker = true;
-            Int64 intInput;
-            IntValidator intValidator = new IntValidator();
+            string directory;
+            long intInput;
             string userInput = "";
 
 
@@ -24,15 +25,15 @@ namespace BinaryConverter
                                   "==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=="
                                   );
 
-                      Console.WriteLine( " [1]Convert number to Binary\n [2]Convert Binary to number\n [3]Letter to binary\n [4]Binary To Letter");
+                Console.WriteLine(" [1]Convert number to Binary\n [2]Convert Binary to number\n [3]Letter to binary\n [4]Binary To Letter");
                 userInput = Console.ReadLine();
 
                 switch (userInput)
                 {
                     case "1":
-                        intInput = intValidator.inputValidator("Write number");
+                        intInput = IntValidator.inputValidator("Write number");
                         Console.WriteLine($"O binário do número {intInput} é [{IntBinaryConverter.IntBinary(intInput)}]");
-                        
+
                         break;
                     case "2":
                         userInput = BinaryInput.Input("Write binary");
@@ -46,17 +47,36 @@ namespace BinaryConverter
                         break;
                     case "4":
                         userInput = Console.ReadLine();
-                        Console.WriteLine($"{BinaryToString.BinaryConvertToString(userInput)}"); 
+                        Console.WriteLine($"{BinaryToString.BinaryConvertToString(userInput)}");
+                        break;
+                    case "5":
+                        Console.WriteLine("Write the directory of archive .txt with binary");
+                        try
+                        {
+
+                            using (var reader = new StreamReader(Console.ReadLine()))
+                            {
+                                Console.WriteLine(BinaryToString.BinaryConvertToString(reader.ReadLine()));
+                            }
+                        }
+                        catch (FileNotFoundException)
+                        {
+                            Console.WriteLine("This file not exist");
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine($"ERROR {ex}");
+                        }
                         break;
                     default:
                         Console.WriteLine("This option don't exists.");
                         break;
                 }
 
-            } while (loopBreaker); 
+            } while (loopBreaker);
 
         }
     }
 
 
-} 
+}

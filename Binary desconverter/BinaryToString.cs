@@ -9,7 +9,7 @@ namespace Binary_converter.Binary_desconverter
 {
     public class BinaryToString
     {
-        public static string BinaryConvertToString(string bin)
+        public static string BinaryConvertToString(string bin, bool isBase64 = false) 
         {
             string binary = bin.Replace(" ", "").Replace("\n", "");
             string finalBin = "";
@@ -22,7 +22,7 @@ namespace Binary_converter.Binary_desconverter
             {
                 for (int i = index; i < multiIndex; i++)
                 {
-                    finalBin += binary[i];
+                      finalBin += binary[i];
                 }
            
                 binaryList.Add(finalBin);
@@ -39,7 +39,7 @@ namespace Binary_converter.Binary_desconverter
 
             for(int bina = 0; bina < binaryList.Count; bina++)
             {
-                text += Convert.ToChar(BinaryToNumber.BinaryToInt( binaryList[bina]));
+                text += Convert.ToChar(BinaryToNumber.BinaryToInt(binaryList[bina])); ;
             }
 
             return text;

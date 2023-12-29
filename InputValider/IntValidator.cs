@@ -9,7 +9,7 @@ namespace BinaryConverter.InputValider
     public class IntValidator
     {
 
-        public Int64 inputValidator(string txt)
+        public static Int64 inputValidator(string txt)
         {
 
             bool loopBreaker = true;

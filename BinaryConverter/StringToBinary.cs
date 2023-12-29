@@ -18,26 +18,12 @@ namespace Binary_converter.BinaryConverter
             
             foreach(char charactere in text)
             {
-                asciiChar = (int)charactere;
+                    asciiChar = (int)charactere;
 
-                binary = $"{IntBinaryConverter.IntBinary(asciiChar)}";
+                    binary = $"{IntBinaryConverter.IntBinary(asciiChar, true, 8)} ";
 
-                if(binary.Length < 8)
-                {
-                    for(int _ = binary.Length; _ < 8; _++)
-                    {
-                        finalBinary += "0";
-                    }
-                    finalBinary += binary;
-                    allBinary.Add(finalBinary);
-                    finalBinary = "";
-                }
-                else
-                {
-                    finalBinary = binary;
-                    allBinary.Add(finalBinary);
-                    finalBinary = "";
-                }
+                    allBinary.Add(binary);
+               
             }
 
             for (int index = 0; index < allBinary.Count; index++)

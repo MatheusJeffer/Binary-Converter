@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Binary_converter.Binary_desconverter
+namespace BinaryConverter.BinaryDesconverter
 {
-    public class BinaryToString
+    public class BinaryDivide
     {
         public static List<string> BinaryConvertToString(string bin, int bits, bool isBase64) 
         {
@@ -43,28 +43,28 @@ namespace Binary_converter.Binary_desconverter
 
                     for(int zeros = finalBin.Length; zeros < bits; zeros++)
                     {
-                        if (!isBase64)
+                        if (isBase64)
                         {
-                            newBin += "0";
-
+                            finalBin += "0";
                         }
                         else
                         {
-                            finalBin += "0";
+                            newBin += "0";
                         }
                     }
 
                     index += bits;
 
-                    if (!isBase64)
-                    {
-                        newBin = finalBin;
-                        binaryList.Add(newBin);
-                        newBin = "";
-                    }
-                    else
+                    if (isBase64)
                     {
                         binaryList.Add(finalBin);
+                        finalBin = "";
+                    }
+                    else 
+                    {
+                        newBin += finalBin;
+                        binaryList.Add(newBin);
+                        newBin = "";
                         finalBin = "";
 
                     }

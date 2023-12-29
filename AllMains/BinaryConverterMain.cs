@@ -3,7 +3,6 @@ using BinaryConverter.InputValider;
 using BinaryConverter.BinaryConverter;
 using BinaryConverter.BinaryDesconverter;
 using Binary_converter.BinaryConverter;
-using Binary_converter.Binary_desconverter;
 using System.Diagnostics;
 namespace BinaryConverter.AllMains
 {
@@ -32,7 +31,7 @@ namespace BinaryConverter.AllMains
                 {
                     case "1":
                         intInput = IntValidator.inputValidator("Write number");
-                        Console.WriteLine($"O binário do número {intInput} é [{IntBinaryConverter.IntBinary(intInput)}]");
+                        Console.WriteLine($"O binário do número {intInput} é [{IntBinaryConverter.IntBinary(intInput, false, 0)}]");
 
                         break;
                     case "2":
@@ -47,7 +46,7 @@ namespace BinaryConverter.AllMains
                         break;
                     case "4":
                         userInput = Console.ReadLine();
-                        Console.WriteLine($"{BinaryToString.BinaryConvertToString(userInput, 8, false)}");
+                        Console.WriteLine($"{BinaryToStringDecoder.Decoder(userInput)}");
                         break;
                     case "5":
                         Console.WriteLine("Write the directory of archive .txt with binary");
@@ -56,7 +55,7 @@ namespace BinaryConverter.AllMains
 
                             using (var reader = new StreamReader(Console.ReadLine()))
                             {
-                                Console.WriteLine(BinaryToString.BinaryConvertToString(reader.ReadLine(), 8, false));
+                                Console.WriteLine(BinaryToStringDecoder.Decoder(reader.ReadLine()));
                             }
                         }
                         catch (FileNotFoundException)

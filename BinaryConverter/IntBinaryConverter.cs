@@ -8,10 +8,11 @@ namespace BinaryConverter.BinaryConverter
 {
     public static class IntBinaryConverter
     {
-        public static string IntBinary(Int64 number)
+        public static string IntBinary(Int64 number, bool zeroFill = false, int bits = 0)
         {
             string Binary = "";
             string BinaryResult = "";
+            string nb = "";
             Int64 numberBin = number;
             for (Int64 numbers = numberBin; numbers > 0; numbers /= 2)
             {
@@ -22,7 +23,20 @@ namespace BinaryConverter.BinaryConverter
             {
                 BinaryResult += Binary[index];
             }
-            return BinaryResult;
+            if (zeroFill)
+            {
+                for(int _ = Binary.Length; _ < bits; _++)
+                {
+                    nb += "0";
+                }
+                nb += BinaryResult;
+                return nb;
+
+            }
+            else
+            {
+                return BinaryResult;
+            }
         }
     }
 }

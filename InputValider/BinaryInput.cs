@@ -25,7 +25,7 @@ namespace BinaryConverter.InputValider
 
                     for (int index = 0; index < binaryInput.Length; index++)
                     {
-                        if (!binaryNumbers.Contains(binaryInput[index]))
+                        if (!binaryNumbers.Contains(binaryInput[index]) && binaryInput[index] != ' ')
                         {
                             characterIndesejado++;
                         }

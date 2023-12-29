@@ -1,15 +1,15 @@
-﻿using Binary_converter.Binary_desconverter;
-using Binary_converter.BinaryConverter;
+﻿using Binary_converter.BinaryConverter;
 using BinaryConverter.BinaryDesconverter;
+using BinaryConverter.ProgramData;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BinaryConverter.AllMains
+namespace BinaryConverter.Base64Converter
 {
-    public class CharToBase64
+    public class CharToBase64 : Data
     {
 
         public static string CharBase64(string input)
@@ -17,13 +17,9 @@ namespace BinaryConverter.AllMains
 
             
             string ascii = StringToBinary.Input(input).Replace(" ", "");
-            List<string> binaryString = BinaryToString.BinaryConvertToString(ascii, 6, true);
+            List<string> binaryString = BinaryDivide.BinaryConvertToString(ascii, 6, true);
             string base64 = "";
-            char[] mapingBase64 = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
-                                        'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f',
-                                         'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v',
-                                        'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '/'};
-
+        
                 
             for (int bin = 0; bin < binaryString.Count; bin++)
             {

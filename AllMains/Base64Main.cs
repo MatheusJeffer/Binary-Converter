@@ -1,15 +1,17 @@
 ﻿using BinaryConverter.AllMains;
 using BinaryConverter.InputValider;
 using System;
+using BinaryConverter.Base64Converter;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BinaryConverter.ProgramData;
 
 namespace Binary_converter.AllMains
 {
-    public class Base64Main
+    public class Base64Main 
     {
         public static void Base64ConveterMain()
         {
@@ -34,6 +36,13 @@ namespace Binary_converter.AllMains
                     case 1:
                         txtInput = Console.ReadLine();
                         Console.WriteLine(CharToBase64.CharBase64(txtInput));
+                        break;
+                    case 2:
+                        txtInput = Console.ReadLine();
+
+                        Console.WriteLine(Decoder.DecoderInput(txtInput, 6, 8, Data.mapingBase64));
+
+
                         break;
                     default:
                         Console.WriteLine("This options don't exists.");

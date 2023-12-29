@@ -6,7 +6,29 @@ using System.Threading.Tasks;
 
 namespace Binary_converter.AllMains
 {
-    public class Base64System
+    public class HexDecoderMain
     {
+
+
+        public static void HexMain()
+        {
+
+            int userInput = 0;
+            string text;
+
+
+
+
+
+
+
+
+        }
+
+
+
+
+
+
     }
 }

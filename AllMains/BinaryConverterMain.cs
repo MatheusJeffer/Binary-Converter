@@ -47,7 +47,7 @@ namespace BinaryConverter.AllMains
                         break;
                     case "4":
                         userInput = Console.ReadLine();
-                        Console.WriteLine($"{BinaryToString.BinaryConvertToString(userInput)}");
+                        Console.WriteLine($"{BinaryToString.BinaryConvertToString(userInput, 8, false)}");
                         break;
                     case "5":
                         Console.WriteLine("Write the directory of archive .txt with binary");
@@ -56,7 +56,7 @@ namespace BinaryConverter.AllMains
 
                             using (var reader = new StreamReader(Console.ReadLine()))
                             {
-                                Console.WriteLine(BinaryToString.BinaryConvertToString(reader.ReadLine()));
+                                Console.WriteLine(BinaryToString.BinaryConvertToString(reader.ReadLine(), 8, false));
                             }
                         }
                         catch (FileNotFoundException)

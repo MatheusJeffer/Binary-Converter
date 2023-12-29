@@ -9,40 +9,75 @@ namespace Binary_converter.Binary_desconverter
 {
     public class BinaryToString
     {
-        public static string BinaryConvertToString(string bin, bool isBase64 = false) 
+        public static List<string> BinaryConvertToString(string bin, int bits, bool isBase64) 
         {
-            string binary = bin.Replace(" ", "").Replace("\n", "");
+            string binary = bin.Replace(" ", "");
             string finalBin = "";
+            string newBin = "";
             string text = "";
             int index = 0;
             List<string> binaryList = new List<string> { };
-            int multiIndex = 8;
+            int multiIndex = bits;
 
             while (true)
             {
-                for (int i = index; i < multiIndex; i++)
+                if (binary.Length - index >= bits)
                 {
-                      finalBin += binary[i];
+                    for (int i = index; i < multiIndex; i++)
+                    {
+                        finalBin += binary[i];
+                    }
+
+                    binaryList.Add(finalBin);
+                    finalBin = "";
+
+                    index += bits;
+                    multiIndex += bits;
                 }
-           
-                binaryList.Add(finalBin);
-                 finalBin = "";
+                else
+                {
+                    for(int i = index; i < binary.Length; i++)
+                    {
+                        finalBin += binary[i];
+                    }
 
-                index += 8;
-                multiIndex += 8;
+                    for(int zeros = finalBin.Length; zeros < bits; zeros++)
+                    {
+                        if (!isBase64)
+                        {
+                            newBin += "0";
 
-                if (index >= binary.Length)
+                        }
+                        else
+                        {
+                            finalBin += "0";
+                        }
+                    }
+
+                    index += bits;
+
+                    if (!isBase64)
+                    {
+                        newBin = finalBin;
+                        binaryList.Add(newBin);
+                        newBin = "";
+                    }
+                    else
+                    {
+                        binaryList.Add(finalBin);
+                        finalBin = "";
+
+                    }
+
+                }
+
+                if (binary.Length - index <= 0)
                 {
                     break;
                 }
             }
 
-            for(int bina = 0; bina < binaryList.Count; bina++)
-            {
-                text += Convert.ToChar(BinaryToNumber.BinaryToInt(binaryList[bina])); ;
-            }
-
-            return text;
+            return binaryList;
 
         }
 

@@ -8,34 +8,33 @@ namespace BinaryConverter.BinaryConverter
 {
     public static class IntBinaryConverter
     {
-        public static string IntBinary(Int64 number, bool zeroFill = false, int bits = 0)
+        public static StringBuilder IntBinary(Int64 number, bool zeroFill = false, int bits = 0)
         {
-            string Binary = "";
-            string BinaryResult = "";
-            string nb = "";
-            Int64 numberBin = number;
-            for (Int64 numbers = numberBin; numbers > 0; numbers /= 2)
+            StringBuilder Binary = new StringBuilder();
+            StringBuilder binaryZeroFill = new StringBuilder();
+            StringBuilder binaryResult = new StringBuilder();
+            for (Int64 numbers = number; numbers > 0; numbers /= 2)
             {
-                Binary += numbers % 2;
+                Binary.Append(numbers % 2);
             }
 
             for (int index = Binary.Length - 1; index >= 0; index--)
             {
-                BinaryResult += Binary[index];
+                binaryResult.Append(Binary[index]);
             }
             if (zeroFill)
             {
                 for(int _ = Binary.Length; _ < bits; _++)
                 {
-                    nb += "0";
+                    binaryZeroFill.Append("0");
                 }
-                nb += BinaryResult;
-                return nb;
+                binaryZeroFill.Append(binaryResult);
+                return binaryZeroFill;
 
             }
             else
             {
-                return BinaryResult;
+                return binaryResult;
             }
         }
     }

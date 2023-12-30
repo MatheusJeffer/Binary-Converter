@@ -12,7 +12,7 @@ namespace BinaryConverter.InputValider
         {
 
             string binaryInput = "";
-            int characterIndesejado = 0;
+            int characterUnwated = 0;
             char[] binaryNumbers = { '0', '1' };
             bool loopBreaker = true;
 
@@ -23,17 +23,17 @@ namespace BinaryConverter.InputValider
                 {
                     binaryInput = Console.ReadLine();
 
-                    for (int index = 0; index < binaryInput.Length; index++)
+                    foreach(char character in binaryInput)
                     {
-                        if (!binaryNumbers.Contains(binaryInput[index]) && binaryInput[index] != ' ')
+                        if (!binaryNumbers.Contains(character) && character != ' ')
                         {
-                            characterIndesejado++;
+                            characterUnwated++;
                         }
                     }
 
-                    if(characterIndesejado > 0)
+                    if(characterUnwated > 0)
                     {
-                        characterIndesejado = 0;
+                        characterUnwated = 0;
                         Console.WriteLine("ERROR 002: WRITE ONHLY BINARY NUMBERS");
                     }
                     else
@@ -41,13 +41,9 @@ namespace BinaryConverter.InputValider
                         loopBreaker = false;
                     }
                 }
-                catch (FormatException)
+                catch (OutOfMemoryException)
                 {
-                    Console.WriteLine("ERROR 001: WRITE ONLY NUMBERS");
-                }
-                catch (OverflowException)
-                {
-                    Console.WriteLine("ERROR 003: YOU WRITING NUMBERS ALEM OF PERMITED");
+                    Console.WriteLine("ERROR 003: YOU EXCEEDED THE LIMIT OF CHARACTERS.");
                 }
 
             } while (loopBreaker);

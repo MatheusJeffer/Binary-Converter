@@ -9,18 +9,18 @@ namespace BinaryConverter.BinaryDesconverter
 {
     public class BinaryToStringDecoder
     {
-        public static string Decoder(string binary)
+        public static StringBuilder Decoder(string binary)
         {
 
 
-            string finalText = "";
-            string bin = binary;
+            StringBuilder finalText =  new StringBuilder();
+            StringBuilder bin = new StringBuilder(binary);
 
-            List<string> binaryList = BinaryDivide.BinaryConvertToString(bin, 8, false);
+            List<StringBuilder> binaryList = SplitBinaries.splitBin(bin, 8, "Binary");
 
             for (int index = 0; index < binaryList.Count; index++)
             {
-                finalText += Convert.ToChar(BinaryToNumber.BinaryToInt(binaryList[index]));
+                finalText.Append(Convert.ToChar(BinaryToNumber.BinaryToInt(Convert.ToString(binaryList[index]))));
             
             }
 

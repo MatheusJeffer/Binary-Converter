@@ -13,12 +13,11 @@ namespace BinaryConverter.BinaryDesconverter
         public static Int64 BinaryToInt(string binaryNumber)
         {
             Int64 results = 0;
-            string binary = binaryNumber;
             int index = 0;
 
-            for(int number = binary.Length - 1; number >= 0; number--)
+            for(int number = binaryNumber.Length - 1; number >= 0; number--)
             {
-                results += Convert.ToInt64(binary[index].ToString()) * Convert.ToInt64(  Math.Pow(2, number));
+                results += Convert.ToInt64(binaryNumber[index].ToString()) * Convert.ToInt64(  Math.Pow(2, number));
                 index++;
             }
             return results;

@@ -16,7 +16,7 @@ namespace Binary_converter.AllMains
         public static void Base64ConveterMain()
         {
             string txtInput;
-            string binaryTBase64;
+            StringBuilder Base64 = new StringBuilder();
             Int64 userInput;
             bool breaker = true;
 
@@ -27,7 +27,7 @@ namespace Binary_converter.AllMains
                                   "       Base 64 Converter\n" +
                                   "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
                                   );
-                Console.WriteLine("[1]Characters to Base 64");
+                Console.WriteLine(" [1]Characters to Base 64\n [2]Base64 to characters");
 
                 userInput = IntValidator.inputValidator("Switch the options");
 
@@ -35,14 +35,27 @@ namespace Binary_converter.AllMains
                 {
                     case 1:
                         txtInput = Console.ReadLine();
-                        Console.WriteLine(CharToBase64.CharBase64(txtInput));
+                        Base64.Append(DataEncode.Encode(txtInput, 6, Data.MapingBase64, "base64"));
+                       
+                        if(Base64.Length % 4 != 0)
+                        {
+                            Base64.Append("==");
+                        }
+                        else if (Base64.Length % 3 != 0)
+                        {
+                            Base64.Append("=");
+                        }
+
+                        Console.WriteLine($"Result: [{Base64}]");
+                        Base64.Clear();
                         break;
                     case 2:
                         txtInput = Console.ReadLine();
 
-                        Console.WriteLine(Decoder.DecoderInput(txtInput, 6, 8, Data.mapingBase64));
-
-
+                        Console.WriteLine(Decoder.DecoderInput(txtInput, 6, 8, Data.MapingBase64, "base64"));
+                        break;
+                    case 3:
+                        breaker = false;
                         break;
                     default:
                         Console.WriteLine("This options don't exists.");

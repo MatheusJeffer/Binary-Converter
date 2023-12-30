@@ -9,30 +9,22 @@ namespace Binary_converter.BinaryConverter
 {
     public class StringToBinary
     {
-        public static string Input(string text)
+        public static StringBuilder Input(string text)
         {
-            string binary = "";
-            string finalBinary = "";
-            List<string> allBinary = new List<string> { };
+            StringBuilder binary = new StringBuilder();
             int asciiChar;
             
-            foreach(char charactere in text)
+            foreach(char characters in text)
             {
-                    asciiChar = (int)charactere;
+                    asciiChar = (int)characters;
 
-                    binary = $"{IntBinaryConverter.IntBinary(asciiChar, true, 8)} ";
-
-                    allBinary.Add(binary);
-               
-            }
-
-            for (int index = 0; index < allBinary.Count; index++)
-            {
-                finalBinary += $"{allBinary[index]} ";
+                    binary.Append($"{IntBinaryConverter.IntBinary(asciiChar, true, 8)} ");
 
             }
 
-            return finalBinary;
+
+
+            return binary;
         }
 
 

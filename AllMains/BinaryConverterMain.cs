@@ -4,6 +4,7 @@ using BinaryConverter.BinaryConverter;
 using BinaryConverter.BinaryDesconverter;
 using Binary_converter.BinaryConverter;
 using System.Diagnostics;
+using System.Text;
 namespace BinaryConverter.AllMains
 {
     public static class BinaryMain
@@ -13,6 +14,7 @@ namespace BinaryConverter.AllMains
             bool loopBreaker = true;
             string directory;
             long intInput;
+            string binaryInput;
             string userInput = "";
 
 
@@ -24,7 +26,8 @@ namespace BinaryConverter.AllMains
                                   "==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=="
                                   );
 
-                Console.WriteLine(" [1]Convert number to Binary\n [2]Convert Binary to number\n [3]Letter to binary\n [4]Binary To Letter");
+                Console.WriteLine(" [1]Convert number to Binary\n [2]Convert Binary to number\n " +
+                           " [3]Letter to binary\n [4]Binary To Letter\n [5]Decode archive\n [6]Back");
                 userInput = Console.ReadLine();
 
                 switch (userInput)
@@ -35,18 +38,16 @@ namespace BinaryConverter.AllMains
 
                         break;
                     case "2":
-                        userInput = BinaryInput.Input("Write binary");
-                        Console.WriteLine($"O binário {userInput} representa o número [{BinaryToNumber.BinaryToInt(userInput)}]");
-
-
+                        binaryInput = BinaryInput.Input("Write binary");
+                        Console.WriteLine($"O binário {userInput} representa o número [{BinaryToNumber.BinaryToInt(binaryInput)}]");
                         break;
                     case "3":
                         userInput = Console.ReadLine();
                         Console.WriteLine($"O texto {userInput} representa o binario {StringToBinary.Input(userInput)}");
                         break;
                     case "4":
-                        userInput = Console.ReadLine();
-                        Console.WriteLine($"{BinaryToStringDecoder.Decoder(userInput)}");
+                        binaryInput = Console.ReadLine();
+                        Console.WriteLine($"{BinaryToStringDecoder.Decoder(binaryInput)}");
                         break;
                     case "5":
                         Console.WriteLine("Write the directory of archive .txt with binary");
@@ -66,6 +67,9 @@ namespace BinaryConverter.AllMains
                         {
                             Console.WriteLine($"ERROR {ex}");
                         }
+                        break;
+                    case "6":
+                        loopBreaker = false;
                         break;
                     default:
                         Console.WriteLine("This option don't exists.");
